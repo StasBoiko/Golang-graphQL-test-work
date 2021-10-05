@@ -38,36 +38,82 @@ docker exec -it test-work-app bash /app/apply_db_schema.sh
 
 To add an author, you can use (mutation create author):
 
-```json
-mutation { createAuthor ( data: {name: "Vasya"} ) { id name } }
+```
+mutation {
+ createAuthor (
+  data: {name: "Vasya"}
+ ) {
+   id
+   name
+  }
+}
 ```
 
 To add a book, you can use (mutation to create a book):
 
-```json
-mutation { createBook ( data: {title: "Golang for dummies", authorIDs: "1"} ) { id title } }
+```
+mutation {
+ createBook (
+  data: {title: "Golang for dummies", authorIDs: "1"}
+ ) {
+  id
+  title
+ }
+}
 ```
 
 To get all authors you can use (request to get all authors):
 
-```json
-query { authors { id name books { id title } } }
+```
+query {
+ authors {
+  id
+  name
+  books {
+   id
+   title
+  }
+ }
+}
 ```
 
 For getting all books you can use (request to get all books):
 
-```json
-query { books { id title authors { id name } } }
+```j
+query {
+ books {
+  id
+  title
+  authors {
+   id
+   name
+  }
+ }
+}
 ```
 
 You can update the author (mutation for updating the author by ID):
 
-```json
-mutation { updateAuthor (id: 1, data: {name: "Kolya"} ) { id name } }
+```
+mutation {
+ updateAuthor (id: 1,
+  data: {name: "Kolya"}
+ ) {
+  id
+  name
+ }
+}
 ```
 
 You can update the book (mutation for updating the book):
 
-```json
-mutation { updateBook (id: 1, data: {title: "Golang for advanced dummies", authorIDs: 1} ) { id title } }
+```
+mutation {
+ updateBook (id: 1,
+  data: {title: "Golang for advanced dummies", authorIDs: 1}
+ ) {
+  id
+  title
+ }
+}
 ```
