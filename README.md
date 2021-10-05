@@ -79,7 +79,7 @@ query {
 
 For getting all books you can use (request to get all books):
 
-```j
+```
 query {
  books {
   id
